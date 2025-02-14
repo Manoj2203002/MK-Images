@@ -1,60 +1,160 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General page styling */
+main {
+  font-family: 'Poppins', sans-serif;
+  background-color: seashell;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Search bar container */
+.search {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Input field */
+.search input {
+  width: 320px;
+  border-radius: 25px;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.search input:focus {
+  border-color: #28a745;
+  box-shadow: 0px 0px 8px rgba(40, 167, 69, 0.6);
+}
+
+/* Modern search button */
+.search button {
+  background-color: #28a745;
+  border: none;
+  padding: 12px 18px;
+  font-size: 16px;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+/* Button hover effect */
+.search button:hover {
+  background-color: #218838;
+  box-shadow: 0px 0px 10px rgba(40, 167, 69, 0.5);
+  transform: scale(1.05);
+}
+
+/* Responsive: Stack input & button on smaller screens */
+@media (max-width: 480px) {
   .search {
-    margin: 20px;
-    text-align: center;
+    flex-direction: column;
+    gap: 8px;
   }
-  
-  .search input {
-    width: 300px;
-    border-radius: 10px 0px 0px 10px;
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #ddd;
-    box-shadow: 2px 2px 12px black;
-    outline: none;
-  }
-  .search button{
-    background-color: green;
-    border: none;
-    padding:12px;
-    color: white;
-    font-size: 16px;
-    border-radius:0px 10px 10px 0px;
-    box-shadow: 2px 2px 12px black;
-    transition: all 0.3s ease-in;
-  }
-  .search button:hover{
-    transform: scale(1.1);
-    background-color: rgb(4, 92, 4);
-  }
-  
-  .images {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
-  }
-  .images img {
+
+  .search input,
+  .search button {
     width: 100%;
-    height: auto;
     border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-    box-shadow: 2px 2px 16px black;
   }
-  
-  .images img:hover {
-    transform: scale(1.05);
+}
+
+/* Image container */
+.images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1300px;
+  margin: auto;
+}
+
+/* Individual image box */
+.images div {
+  background: white;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+}
+
+.images div:hover {
+  transform: translateY(-5px);
+}
+
+/* Image styling */
+.images img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.3);
+}
+
+.images img:hover {
+  transform: scale(1.05);
+}
+
+/* Image type */
+.images p {
+  font-size: 14px;
+  color: #555;
+  margin-top: 8px;
+}
+
+/* Adjust tags: Show only 2-3 tags */
+.tags {
+  font-size: 12px;
+  color: #777;
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80%;
+  margin: auto;
+}
+
+/* Mobile Responsive: Adjust grid layout */
+@media (max-width: 768px) {
+  .images {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
   }
-  
+}
+
+@media (max-width: 480px) {
+  .images {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 10px;
+  }
+
+  .images div {
+    padding: 8px;
+  }
+
+  .images p {
+    font-size: 12px;
+  }
+}
