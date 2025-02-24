@@ -47,7 +47,7 @@ const PreviewImage = () => {
     <main className="body">
       <div className="Back">
         <Link to={"/"}>
-          <button>Back</button>
+          <button>Home</button>
         </Link>
       </div>
       <div className="preview">
